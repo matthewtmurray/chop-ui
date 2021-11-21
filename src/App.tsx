@@ -1,24 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import ProductCard from './components/ProductCard';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+         <ProductCard description='fish soup' title='Fish Soup'/>
+         <ProductCard description='pizza' title='PIZZA'/>
+         <ProductCard description='ham sandwich'title='Sandwitch'/>
+         <ProductCard description='pie' title='PIE'/>
     </div>
   );
 }
