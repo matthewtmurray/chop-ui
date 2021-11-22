@@ -3,16 +3,30 @@ import './App.css';
 import ProductCard from './components/ProductCard';
 import { useState } from 'react';
 import Basket from './components/Basket';
+import { OrderItem } from './models/orderItem';
 
 function App() {
 
-  const [order, setOrder] = useState<string[]>(['']);
+  
+  const [order, setOrder] = useState<OrderItem[]>([]);
 
   const AddToBasket = (item : string)=>{
-    console.log(item + ' added');
-    setOrder([...order, item]);
-    console.log(`current order: ${order.join(',')}`);
+    let foundItem = order.find(i => i.itemName === item);
+    if (!foundItem) {
+      setOrder([...order, new OrderItem(item,1)]);
+    }
+    else{
+      order.map((o)=>{
+        if (o.itemName === foundItem?.itemName) {
+            o.amount = o.amount + 1;
+        }
+      });
+      
+      setOrder(order.filter((o)=>o));
+      
+    }
   }
+
   return (
     <div className="App">
       <div className="container">
