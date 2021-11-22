@@ -2,10 +2,11 @@ import React from 'react';
 import './App.css';
 import ProductCard from './components/ProductCard';
 import { useState } from 'react';
+import Basket from './components/Basket';
 
 function App() {
 
-  const [order, setOrder] = useState<string[]>([]);
+  const [order, setOrder] = useState<string[]>(['']);
 
   const AddToBasket = (item : string)=>{
     console.log(item + ' added');
@@ -30,6 +31,7 @@ function App() {
          </div>
          </div>
       </div>
+      <Basket items={order}/>
     </div>
   );
 }

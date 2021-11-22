@@ -1,6 +1,14 @@
 function Basket(props :any) {
     return (
-        <div></div>
+        <div>
+            <h1> My Basket </h1>
+            <ul>
+            {props.items.map((i:string)=>{
+                return <li>{i}</li>
+            })}
+            </ul>
+           
+        </div>
     );
   }
   
