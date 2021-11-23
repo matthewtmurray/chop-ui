@@ -4,6 +4,7 @@ import ProductCard from './components/ProductCard';
 import { useState } from 'react';
 import Basket from './components/Basket';
 import { OrderItem } from './models/orderItem';
+import { BasketStatus } from './components/BasketStatus';
 
 function App() {
 
@@ -16,19 +17,30 @@ function App() {
       setOrder([...order, new OrderItem(item,1)]);
     }
     else{
-      order.map((o)=>{
+      const newarray  = order.map<OrderItem>((o)=>{
         if (o.itemName === foundItem?.itemName) {
             o.amount = o.amount + 1;
         }
+        return o;
       });
       
-      setOrder(order.filter((o)=>o));
+      setOrder(newarray);
       
     }
   }
 
+  const getTotal = ()=>{
+    let total = 0;
+    order.forEach((o) =>{
+      total = total + o.amount;
+    }
+    )
+    return total;
+  }
+
   return (
     <div className="App">
+      <BasketStatus className="BasketStatus" total={getTotal()}/>
       <div className="container">
         <div className="row">
           <div className="col-sm">
