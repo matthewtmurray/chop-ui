@@ -5,7 +5,7 @@ export const BasketStatus = (props: any)=>{
     return(
     <div style={{"position":"fixed","top":"10px","right":"10px"}}>
         <FontAwesomeIcon icon={faCoffee} />
-        {props.total}
+        {props.total} cheese
     </div> 
     );
 } 
