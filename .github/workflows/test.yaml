@@ -2,7 +2,7 @@ name: Test Workflow
 
 on:
   repository_dispatch:
-    types: build
+    types: waveyDavey
 
 jobs:
   run-gitlab-actions:
