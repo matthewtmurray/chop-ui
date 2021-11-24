@@ -1,8 +1,10 @@
 name: Test Workflow
 
 on:
-  repository_dispatch:
-    types: waveyDavey
+  push:
+    paths:
+      - '**.js'
+  
 
 jobs:
   run-gitlab-actions:
