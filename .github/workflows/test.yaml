@@ -2,6 +2,7 @@ name: Test Workflow
 
 on:
   repository_dispatch:
+    types: build
 
 jobs:
   run-gitlab-actions:
