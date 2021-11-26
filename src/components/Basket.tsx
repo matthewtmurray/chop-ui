@@ -4,11 +4,11 @@ function Basket(props :any) {
     return (
         <div>
             <h1> My Basket </h1>
-            <ul>
+            <div style={{width:"40%", margin:"auto"}}>
             {props.items.map((i:OrderItem)=>{
-                return <li>{i.itemName + " " + i.amount}</li>
+                return <div style={{borderLeft:"50px olive solid", margin:"5px"}}>{i.itemName + " " + i.amount}</div>
             })}
-            </ul>
+            </div>
            
         </div>
     );
