@@ -38,19 +38,19 @@ function App() {
     return total;
   }
 
-  return (
+                     return (
     <div className="App">
       <BasketStatus className="BasketStatus" total={getTotal()}/>
       <div className="container">
         <div className="row">
           <div className="col-sm">
-         <ProductCard description='fish soup' title='Fish Soup' image='https://picsum.photos/id/1/200/300' click={()=>{AddToBasket('Fish Soup')}}/>
+         <ProductCard description='fish soup' title='Fish soup' image='https://picsum.photos/id/1/200/300' click={()=>{AddToBasket('Fish Soup')}}/>
          </div>
          <div className="col-sm">
          <ProductCard description='pizza' title='PIZZA' image='https://picsum.photos/id/101/200/300' click={()=>{AddToBasket('PIZZA')}}/>
          </div>
          <div className="col-sm">
-         <ProductCard description='ham sandwich'title='Sandwich' image='https://picsum.photos/id/1010/200/300' click={()=>{AddToBasket('Sandwich')}}/>
+         <ProductCard description='ham and mustard sandwich'title='Sandwich' image='https://picsum.photos/id/1010/200/300' click={()=>{AddToBasket('Sandwich')}}/>
          </div>
          <div className="col-sm">
          <ProductCard description='pie' title='PIE' image='https://picsum.photos/id/25/200/300' click={()=>{AddToBasket('PIE')}}/>
