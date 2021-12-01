@@ -1,0 +1,31 @@
+name: Test Workflow
+
+on:
+  push:
+    paths:
+      - '**.js'
+  
+
+jobs:
+  run-gitlab-actions:
+    runs-on: ubuntu-latest
+    steps:
+    - name: payload
+      run: echo ${{ github.event.client_payload.env }}
+    - name: list files before checkout
+      run: |
+        pwd
+        ls -a
+    - name: Checkout
+      uses: actions/checkout@v1
+    - name: list files after checkout
+      run: |
+        pwd
+        ls -a
+    - name: simple js Action
+      id: greet
+      uses: actions/hello-world-javascript-action@v1
+      with:
+        who-to-greet: John
+    - name: Log greeting time
+      run: echo "${{ steps.greet.outputs.time }}"
