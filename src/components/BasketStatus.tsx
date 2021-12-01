@@ -9,7 +9,7 @@ export const BasketStatus = (props: any) => {
       </p>
       <p>
         {props.total +
-          (props.total > 1 || props.total == 0
+          (props.total > 1 || props.total === 0
             ? " items in basket"
             : "item in basket")}
       </p>
