@@ -5,7 +5,7 @@ function ProductCard(props: any) {
       <div className="card-body">
         <h5 className="card-title">{props.title}</h5>
         <p className="card-text"> {props.description}</p>
-        <a href="#" className="btn btn-primary" onClick={props.click}>
+        <a href="#/" className="btn btn-primary" onClick={props.click}>
           Order
         </a>
       </div>
