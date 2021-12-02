@@ -1,3 +1,3 @@
-function hey(){
-    return "hey";
+function hey() {
+  return "hey";
 }
