@@ -27,6 +27,11 @@
     "eject": "react-scripts eject",
     "format:check": "npx prettier --write ."
   },
+  "husky": {
+    "hooks": {
+      "comit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -46,6 +51,9 @@
     ]
   },
   "devDependencies": {
+    "@commitlint/cli": "^15.0.0",
+    "@commitlint/config-conventional": "^15.0.0",
+    "husky": "^4.3.8",
     "prettier": "2.5.0",
     "semantic-release": "^18.0.1"
   }
