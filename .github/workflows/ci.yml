@@ -40,6 +40,11 @@ jobs:
         with:
           name: build
           path: build
+      - name: Zip assets
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+             zip -r build.zip ./build
+             zip -r coverage.zip ./coverage
       - name: Create a release
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: npx semantic-release
@@ -51,3 +56,12 @@ jobs:
         env:
           SURGE_LOGIN: ${{ secrets.SURGE_LOGIN }}
           SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
+      - name: Upload coverage reports
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: npx codecov
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+      - name: Open Issue
+        if: failure() && github.event_name == 'push'
+        run: |
+        
