@@ -11,5 +11,5 @@ function ProductCard(props: any) {
     );
   }
   
-  export default ProductCard ;
+  export default ProductCard;
 

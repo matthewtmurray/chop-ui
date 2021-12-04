@@ -4,7 +4,7 @@ import ProductCard from "./components/ProductCard";
 import { useState } from "react";
 import Basket from "./components/Basket";
 import { OrderItem } from "./models/orderItem";
-import { BasketStatus } from "./components/BasketStatus";
+import { NavBar } from "./components/NavBar";
 
 function App() {
   const [order, setOrder] = useState<OrderItem[]>([]);
@@ -35,7 +35,7 @@ function App() {
 
   return (
     <div className="App">
-      <BasketStatus className="BasketStatus" total={getTotal()} />
+      <NavBar total={getTotal()}/>
       <div className="container">
         <div className="row">
           <div className="col-sm">
