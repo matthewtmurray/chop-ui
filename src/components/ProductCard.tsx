@@ -1,3 +1,5 @@
+import "./ComponentStyles.css";
+
 function ProductCard(props: any) {
   return (
     <div className="card w-75">
@@ -5,7 +7,7 @@ function ProductCard(props: any) {
       <div className="card-body">
         <h5 className="card-title">{props.title}</h5>
           <p className="card-text"> {props.description}</p>
-          <a href="#/" className="btn btn-primary" onClick={props.click}>Order</a>
+          <a href="#/" className="btn orderButton"  onClick={props.click}>Order</a>
         </div>
       </div>
     );

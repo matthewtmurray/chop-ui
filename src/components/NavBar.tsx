@@ -1,8 +1,9 @@
 import { BasketStatus } from "./BasketStatus";
+import "./ComponentStyles.css";
 
 export const NavBar = (props: any) => {
     return (
-        <div className="container" style={{marginTop: "15px"}}>
+        <div className="container navBar">
             <div className="row">
                 <div className="col-10">
                 </div>
