@@ -11,5 +11,5 @@ test("renders learn react link", () => {
 });
 
 test("test basket", ()=>{
-    render(<Basket items={[{itemName: "pie"},{itemName: "pie"},{itemName: "pie"}]}/>);
+    render(<Basket/>);
 });
