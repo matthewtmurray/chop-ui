@@ -1,6 +1,11 @@
 import { OrderItem } from "../models/orderItem";
+import { useSelector, useDispatch } from "react-redux";
 
-function Basket(props: any) {
+function Basket() {
+
+  const dispatch = useDispatch();
+
+  const orders = useSelector((state: any) => state.orders);
 
   const borderColour = (itemName:String)=>{
       switch(itemName.toLowerCase()){
@@ -18,9 +23,8 @@ function Basket(props: any) {
   }
   return (
     <div>
-      <h1> My Basket </h1>
       <div style={{ width: "40%", margin: "auto" }}>
-        {props.items.map((i: OrderItem) => {
+        {orders.map((i: OrderItem) => {
           return (
             <div style={{ borderLeft: `50px ${borderColour(i.itemName)} solid`, margin: "5px" }}>
               {i.itemName + " " + i.amount}
