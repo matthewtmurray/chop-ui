@@ -1,9 +1,7 @@
 import { OrderItem } from "../models/orderItem";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 function Basket() {
-
-  const dispatch = useDispatch();
 
   const orders = useSelector((state: any) => state.basket.orders);
 

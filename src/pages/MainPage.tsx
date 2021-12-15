@@ -1,6 +1,4 @@
 import ProductCard from "../components/ProductCard";
-import { useState } from "react";
-import Basket from "../components/Basket";
 import { OrderItem } from "../models/orderItem";
 import { NavBar } from "../components/NavBar";
 import { useSelector, useDispatch } from "react-redux";
