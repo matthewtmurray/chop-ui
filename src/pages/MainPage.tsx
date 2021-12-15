@@ -4,15 +4,16 @@ import Basket from "../components/Basket";
 import { OrderItem } from "../models/orderItem";
 import { NavBar } from "../components/NavBar";
 import { useSelector, useDispatch } from "react-redux";
+import { basketActions } from "../store/store";
 
 const MainPage = ()=>{
 
     const dispatch = useDispatch();
 
-    const orders = useSelector((state: any) => state.orders);
+    const orders = useSelector((state: any) => state.basket.orders);
 
     const addHandler = (orders)=>{
-        dispatch({ type: 'add', orders: orders});
+        dispatch(basketActions.add(orders));
     };
 
     const AddToBasket = (item: string) => {

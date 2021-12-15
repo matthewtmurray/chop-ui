@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 export const BasketStatus = () => {
 
-  const orders = useSelector((state: any) => state.orders);
+  const orders = useSelector((state: any) => state.basket.orders);
 
   const getTotal = () => {
     let total = 0;

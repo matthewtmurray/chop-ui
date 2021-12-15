@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom';
 import MainPage from "./pages/MainPage";
 import BasketPage from "./pages/BasketPage";
 import { Provider } from 'react-redux';
-import store from './store/orderStore';
+import store from './store/store';
 import CounterPage from "./pages/CounterPage";
 
 

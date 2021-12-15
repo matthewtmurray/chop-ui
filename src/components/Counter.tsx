@@ -1,26 +1,37 @@
 import { useSelector, useDispatch } from "react-redux";
+import { counterActions, authActions } from '../store/store';
 
 const Counter = ()=>{
     
     const dispatch = useDispatch();
 
-    const counter = useSelector((state: any) => state.counter);
-    const show = useSelector((state: any) => state.showCounter);
+    const counter = useSelector((state: any) => state.counter.counter);
+    const show = useSelector((state: any) => state.counter.showCounter);
+    const loggedIn = useSelector((state: any) => state.auth.isAuthenticated);
 
     const incrementHandler = ()=>{
-        dispatch({ type: 'increment'});
+        dispatch(counterActions.increment());
     };
 
     const decrementHandler = ()=>{
-        dispatch({ type: 'decrement'});
+        dispatch(counterActions.decrement());
     };
 
     const increaseHandler = ()=>{
-        dispatch({ type: 'increase', amount: 5});
+        dispatch(counterActions.increase(5));
     }
 
     const toggleCounter = () => {
-        dispatch({ type: 'toggle'});
+        dispatch(counterActions.toggleCounter());
+    };
+
+    const logIn = (event)=>{
+        event.preventDefault();
+        dispatch(authActions.login());
+    };
+
+    const logOut = ()=>{
+        dispatch(authActions.logout());
     };
 
     return (
@@ -33,6 +44,12 @@ const Counter = ()=>{
                 <button className="btn btn-warning" style={{margin:"10px"}} onClick={increaseHandler}>Increase by 5</button>
             </div>
             <button onClick={toggleCounter} className="btn btn-primary" style={{margin:"10px"}}>Toggle</button>
+            { !loggedIn &&
+            <button onClick={logIn} className="btn btn-secondary"  style={{margin:"10px"}}>Login</button>
+            }
+            { loggedIn &&
+            <button onClick={logOut} className="btn btn-secondary"  style={{margin:"10px"}}>Logout</button>
+            }
         </main>
     );
 }

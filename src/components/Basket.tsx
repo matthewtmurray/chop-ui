@@ -5,7 +5,7 @@ function Basket() {
 
   const dispatch = useDispatch();
 
-  const orders = useSelector((state: any) => state.orders);
+  const orders = useSelector((state: any) => state.basket.orders);
 
   const borderColour = (itemName:String)=>{
       switch(itemName.toLowerCase()){
