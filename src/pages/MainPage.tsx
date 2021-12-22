@@ -2,7 +2,7 @@ import ProductCard from "../components/ProductCard";
 import { OrderItem } from "../models/orderItem";
 import { NavBar } from "../components/NavBar";
 import { useSelector, useDispatch } from "react-redux";
-import { basketActions } from "../store/store";
+import { basketActions } from "../store/basket";
 
 const MainPage = ()=>{
 
